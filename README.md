@@ -4,15 +4,9 @@ Propertied is a tiny Clojure library that deals with Java property
 lists.
 
 
-## Community
-
-To subscribe for announcements of releases, important changes and so on, please follow [@ClojureWerkz](https://twitter.com/#!/clojurewerkz) on Twitter.
-
-
 ## Project Maturity
 
 Propertied is *very* young and under active development.
-
 
 
 ## Artifacts
@@ -46,11 +40,6 @@ With Maven:
 
 
 
-## Getting Started
-
-Please refer to our [Getting Started guide](...). Don't hesitate to join our [mailing list](https://groups.google.com/forum/#!forum/clojure-...) and ask questions, too!
-
-
 ## Documentation & Examples
 
 Propertied makes it easy to convert property lists (`java.util.Properties`) into Clojure
@@ -73,6 +62,11 @@ instantiates a property list from an input (e.g. a map).
   (p/properties->map pl))
 ;= {"a key" "a value"}
 ```
+
+
+## Community
+
+To subscribe for announcements of releases, important changes and so on, please follow [@ClojureWerkz](https://twitter.com/#!/clojurewerkz) on Twitter.
 
 
 
