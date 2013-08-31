@@ -13,6 +13,7 @@
 ;; limitations under the License.
 
 (ns clojurewerkz.propertied.properties
+  (:require [clojure.java.io :as io])
   (:import [java.util Properties Map ArrayList]))
 
 ;;
@@ -36,8 +37,8 @@
   (let [names (.propertyNames p)]
     (reduce (fn [m k]
               (assoc m k (.getProperty p k)))
-          {}
-          (enumerator-into names))))
+            {}
+            (enumerator-into names))))
 
 (defn ^Properties map->properties
   [^Map m]
@@ -54,4 +55,14 @@
 (extend-protocol PropertySource
   java.util.Map
   (load-from [input]
-    (map->properties input)))
+    (map->properties input))
+
+  java.io.File
+  (load-from [input]
+    (doto (Properties.)
+      (.load (io/input-stream input))))
+
+  java.net.URL
+  (load-from [input]
+    (doto (Properties.)
+      (.load (io/input-stream input)))))

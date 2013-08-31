@@ -14,6 +14,7 @@
 
 (ns clojurewerkz.propertied.properties-test
   (:require [clojure.test :refer :all]
+            [clojure.java.io :as io]
             [clojurewerkz.propertied.properties :as prop]))
 
 
@@ -39,3 +40,11 @@
     (are [k v] (is (= v (.getProperty p k)))
          "key1" "value1"
          "key2" "2")))
+
+(deftest test-load-from-file
+  (let [p (prop/load-from (io/resource "quartz.properties"))]
+    (are [k v] (is (= v (.getProperty p k)))
+         "org.quartz.scheduler.instanceName" "MongoDBQuartzStoreTestScheduler"
+         "org.quartz.threadPool.threadCount" "4"
+         "org.quartz.plugin.triggHistory.class" "org.quartz.plugins.history.LoggingTriggerHistoryPlugin"
+         "org.quartz.plugin.jobHistory.class" "org.quartz.plugins.history.LoggingJobHistoryPlugin")))
