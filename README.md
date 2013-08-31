@@ -52,7 +52,7 @@ instantiates a property list from an input (e.g. a map).
 `clojurewerkz.propertied.properties/properties->map`
 
 ``` clojure
-(require [clojurewerkz.propertied.properties :as p])
+(require '[clojurewerkz.propertied.properties :as p])
 
 (p/load-from {"a key" "a value"})
 ;= {"a key" "a value"}
@@ -61,6 +61,12 @@ instantiates a property list from an input (e.g. a map).
 (let [pl (p/load-from {"a key" "a value"})]
   (p/properties->map pl))
 ;= {"a key" "a value"}
+
+;; loading from files and InputStreams
+(require '[clojure.java.io :as io])
+
+(p/load-from (io/resource "resource/on/classpath.properties"))
+(p/load-from (io/file "resource/on/classpath.properties"))
 ```
 
 
