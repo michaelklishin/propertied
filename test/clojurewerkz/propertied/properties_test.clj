@@ -13,8 +13,8 @@
 ;; limitations under the License.
 
 (ns clojurewerkz.propertied.properties-test
-    (:require [clojure.test :refer :all]
-              [clojurewerkz.propertied.properties :as prop]))
+  (:require [clojure.test :refer :all]
+            [clojurewerkz.propertied.properties :as prop]))
 
 
 (deftest test-properties-from-map
