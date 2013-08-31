@@ -1,5 +1,5 @@
 (defproject clojurewerkz/propertied "1.0.0-SNAPSHOT"
-  :description "FIXME"
+  :description "Tiny Clojure library for working with property lists (java.util.Properties)"
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [clojurewerkz/support "0.15.0"]]
   :profiles {:1.4 {:dependencies [[org.clojure/clojure "1.4.0"]]}
