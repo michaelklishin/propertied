@@ -21,6 +21,7 @@
 ;;
 
 (defn ^:private enumerator-into
+  "Produces an immutable collection from java.util.Hashtable$Enumerator"
   [^java.util.Hashtable$Enumerator e]
   (let [al (ArrayList.)]
     (while (.hasMoreElements e)
