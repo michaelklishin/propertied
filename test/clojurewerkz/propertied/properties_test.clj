@@ -15,7 +15,8 @@
 (ns clojurewerkz.propertied.properties-test
   (:require [clojure.test :refer :all]
             [clojure.java.io :as io]
-            [clojurewerkz.propertied.properties :as prop]))
+            [clojurewerkz.propertied.properties :as prop])
+  (:import java.io.File))
 
 
 (deftest test-properties-from-map
@@ -48,3 +49,12 @@
          "org.quartz.threadPool.threadCount" "4"
          "org.quartz.plugin.triggHistory.class" "org.quartz.plugins.history.LoggingTriggerHistoryPlugin"
          "org.quartz.plugin.jobHistory.class" "org.quartz.plugins.history.LoggingJobHistoryPlugin")))
+
+(deftest test-store-to-file
+  (let [m {"key 1" "value 1"
+           "key 2" "2"}
+        p    (prop/map->properties m)
+        sink (File/createTempFile "propertied" ".properties")]
+    (prop/store-to p sink)
+    (is (= p
+           (prop/load-from sink)))))

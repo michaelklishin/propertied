@@ -14,7 +14,8 @@
 
 (ns clojurewerkz.propertied.properties
   (:require [clojure.java.io :as io])
-  (:import [java.util Properties Map ArrayList]))
+  (:import [java.util Properties Map ArrayList]
+           java.io.File))
 
 ;;
 ;; Implementation
@@ -48,12 +49,11 @@
       (.setProperty p k v))
     p))
 
-(defprotocol PropertySource
-  "Extensions of this protocol can be used to load and store properties"
-  (load-from [input] "Instantiates a property list from the input")
-  (store-to  [output] "Stores a property list to the output"))
+(defprotocol PropertyReader
+  "Extensions of this protocol can be used to load properties"
+  (load-from [input] "Instantiates a property list from the input"))
 
-(extend-protocol PropertySource
+(extend-protocol PropertyReader
   java.util.Map
   (load-from [input]
     (map->properties input))
@@ -67,3 +67,19 @@
   (load-from [input]
     (doto (Properties.)
       (.load (io/input-stream input)))))
+
+(defprotocol PropertyWriter
+  "Writes a property list to file"
+  (store-to [input sink] "Writes property list to file"))
+
+(extend-protocol PropertyWriter
+  java.util.Map
+  (store-to [input sink]
+    (let [p (map->properties input)
+          w (io/writer sink)]
+      (.store p w nil)))
+
+  java.util.Properties
+  (store-to [input sink]
+    (let [w (io/writer sink)]
+      (.store input w nil))))
