@@ -27,7 +27,7 @@ using Maven, add the following repository definition to your
 
 With Leiningen:
 
-    [clojurewerkz/propertied "1.0.0-beta1"]
+    [clojurewerkz/propertied "1.0.0"]
 
 
 With Maven:
@@ -35,7 +35,7 @@ With Maven:
     <dependency>
       <groupId>clojurewerkz</groupId>
       <artifactId>propertied</artifactId>
-      <version>1.0.0-beta1</version>
+      <version>1.0.0</version>
     </dependency>
 
 
@@ -67,6 +67,11 @@ instantiates a property list from an input (e.g. a map).
 
 (p/load-from (io/resource "resource/on/classpath.properties"))
 (p/load-from (io/file "resource/on/classpath.properties"))
+
+;; storing to property files (.properties)
+(p/store-to {"name" "Michael" "age" "28"} "/tmp/michael.properties")
+(p/store-to {"name" "Michael" "age" "28"} (io/file "/tmp/michael.properties"))
+(p/store-to {"name" "Michael" "age" "28"} (java.io.File/createTempFile "michael" ".properties"))
 ```
 
 
@@ -78,7 +83,7 @@ To subscribe for announcements of releases, important changes and so on, please 
 
 ## Supported Clojure Versions
 
-Propertied is built from the ground up for Clojure 1.5.1 and up.
+Propertied requires Clojure 1.5.
 
 
 ## Continuous Integration Status
