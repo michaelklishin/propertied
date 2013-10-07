@@ -6,7 +6,8 @@ lists.
 
 ## Project Maturity
 
-Propertied is *very* young and under active development.
+Propertied is a young project but unlikely radically change
+(it is too small in scope).
 
 
 ## Artifacts
