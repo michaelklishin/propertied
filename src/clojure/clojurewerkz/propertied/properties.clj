@@ -60,13 +60,15 @@
 
   java.io.File
   (load-from [input]
-    (doto (Properties.)
-      (.load (io/input-stream input))))
+    (with-open [is (io/input-stream input)]
+      (doto (Properties.)
+        (.load is))))
 
   java.net.URL
   (load-from [input]
-    (doto (Properties.)
-      (.load (io/input-stream input)))))
+    (with-open [is (io/input-stream input)]
+      (doto (Properties.)
+        (.load (io/input-stream input))))))
 
 (defprotocol PropertyWriter
   "Writes a property list to file"
@@ -75,11 +77,11 @@
 (extend-protocol PropertyWriter
   java.util.Map
   (store-to [input sink]
-    (let [p (map->properties input)
-          w (io/writer sink)]
-      (.store p w nil)))
+    (with-open [w (io/writer sink)]
+      (let [p (map->properties input)]
+        (.store p w nil))))
 
   java.util.Properties
   (store-to [input sink]
-    (let [w (io/writer sink)]
+    (with-open [w (io/writer sink)]
       (.store input w nil))))
