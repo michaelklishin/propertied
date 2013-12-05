@@ -4,6 +4,8 @@
 
 Propertied now correctly releases file descriptors it uses.
 
+Contributed by Alexander Lolis.
+
 
 ## 1.0.0
 
