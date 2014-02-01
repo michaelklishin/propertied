@@ -50,6 +50,9 @@ working with maps.
 `clojurewerkz.propertied.properties/load-from` is a polymorphic function that
 instantiates a property list from an input (e.g. a map or property file).
 
+`clojurewerkz.propertied.properties/store-to` takes a map and stores it into a
+`.properties` file (an output stream or anything else that can be coerced to `java.io.Writer`).
+
 `clojurewerkz.propertied.properties/properties->map` is a function that converts a
 `java.util.Properties` to an immutable map. `clojurewerkz.propertied.properties/map->properties`
 converts the opposite way.
