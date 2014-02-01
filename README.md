@@ -83,7 +83,9 @@ converts the opposite way.
 
 ## Community
 
-To subscribe for announcements of releases, important changes and so on, please follow [@ClojureWerkz](https://twitter.com/#!/clojurewerkz) on Twitter.
+To subscribe for announcements of releases, important changes and so
+on, please follow [@ClojureWerkz](https://twitter.com/#!/clojurewerkz)
+on Twitter.
 
 
 
@@ -94,7 +96,8 @@ Propertied requires Clojure 1.5.
 
 ## Continuous Integration Status
 
-[![Continuous Integration status](https://secure.travis-ci.org/clojurewerkz/propertied.png)](http://travis-ci.org/clojurewerkz/propertied)
+[![Continuous Integration
+status](https://secure.travis-ci.org/clojurewerkz/propertied.png)](http://travis-ci.org/clojurewerkz/propertied)
 
 
 
