@@ -43,19 +43,23 @@ With Maven:
 
 ## Documentation & Examples
 
-Propertied makes it easy to convert property lists (`java.util.Properties`) into Clojure
-maps and vice versa. Thus working with property lists is generally as straightforward as
-working with maps.
+Propertied makes it easy to convert property lists
+(`java.util.Properties`) into Clojure maps and vice versa. Thus
+working with property lists is generally as straightforward as working
+with maps.
 
-`clojurewerkz.propertied.properties/load-from` is a polymorphic function that
-instantiates a property list from an input (e.g. a map or property file).
+`clojurewerkz.propertied.properties/load-from` is a polymorphic
+function that instantiates a property list from an input (e.g. a map
+or property file).
 
-`clojurewerkz.propertied.properties/store-to` takes a map and stores it into a
-`.properties` file (an output stream or anything else that can be coerced to `java.io.Writer`).
+`clojurewerkz.propertied.properties/store-to` takes a map and stores
+it into a `.properties` file (an output stream or anything else that
+can be coerced to `java.io.Writer`).
 
-`clojurewerkz.propertied.properties/properties->map` is a function that converts a
-`java.util.Properties` to an immutable map. `clojurewerkz.propertied.properties/map->properties`
-converts the opposite way.
+`clojurewerkz.propertied.properties/properties->map` is a function
+that converts a `java.util.Properties` to an immutable
+map. `clojurewerkz.propertied.properties/map->properties` converts the
+opposite way.
 
 ``` clojure
 (require '[clojurewerkz.propertied.properties :as p])
