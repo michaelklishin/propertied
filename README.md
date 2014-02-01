@@ -48,9 +48,11 @@ maps and vice versa. Thus working with property lists is generally as straightfo
 working with maps.
 
 `clojurewerkz.propertied.properties/load-from` is a polymorphic function that
-instantiates a property list from an input (e.g. a map).
+instantiates a property list from an input (e.g. a map or property file).
 
-`clojurewerkz.propertied.properties/properties->map`
+`clojurewerkz.propertied.properties/properties->map` is a function that converts a
+`java.util.Properties` to an immutable map. `clojurewerkz.propertied.properties/map->properties`
+converts the opposite way.
 
 ``` clojure
 (require '[clojurewerkz.propertied.properties :as p])
