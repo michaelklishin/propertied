@@ -35,18 +35,22 @@
 ;;
 
 (defn properties->map
-  [^Properties p]
-  (let [names (.propertyNames p)]
-    (reduce (fn [m k]
-              (assoc m k (.getProperty p k)))
-            {}
-            (enumerator-into names))))
+  ([^Properties p]
+     (properties->map p false))
+  ([^Properties p keywordize?]
+     (let [names (.propertyNames p)]
+       (reduce (fn [m k]
+                 (assoc m (if keywordize?
+                            (keyword k)
+                            k) (.getProperty p k)))
+               {}
+               (enumerator-into names)))))
 
 (defn ^Properties map->properties
   [^Map m]
   (let [p (Properties.)]
-    (doseq [[^String k ^String v] m]
-      (.setProperty p k v))
+    (doseq [[k ^String v] m]
+      (.setProperty p (name k) v))
     p))
 
 (defprotocol PropertyReader
