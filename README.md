@@ -72,6 +72,11 @@ opposite way.
   (p/properties->map pl))
 ;= {"a key" "a value"}
 
+;; converting keys to keywords
+(let [pl (p/load-from {"key" "value"})]
+  (p/properties->map p true))
+;= {:key "a value"}
+
 ;; loading from files and InputStreams
 (require '[clojure.java.io :as io])
 
