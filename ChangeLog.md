@@ -1,5 +1,17 @@
 ## Changes Between 1.1.0 and 1.2.0
 
+### Keywords Support
+
+`properties/map->properties` now supports keywords keys. `properties/properties->map` got a new
+arity that converts keys to keywords:
+
+``` clojure
+(require '[clojurewerkz.propertied.properties :as p])
+
+;; converts keys to keywords
+(p/properties->map props true)
+```
+
 ### Clojure 1.6 By Default
 
 The project now depends on `org.clojure/clojure` version `1.6.0`. It is
