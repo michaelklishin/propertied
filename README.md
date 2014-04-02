@@ -106,7 +106,7 @@ Propertied requires Clojure 1.5.
 ## Continuous Integration Status
 
 [![Continuous Integration
-status](https://secure.travis-ci.org/clojurewerkz/propertied.png)](http://travis-ci.org/clojurewerkz/propertied)
+status](https://secure.travis-ci.org/michaelklishin/propertied.png)](http://travis-ci.org/michaelklishin/propertied)
 
 
 
