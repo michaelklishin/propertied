@@ -28,7 +28,7 @@ using Maven, add the following repository definition to your
 
 With Leiningen:
 
-    [clojurewerkz/propertied "1.1.0"]
+    [clojurewerkz/propertied "1.2.0"]
 
 
 With Maven:
@@ -36,7 +36,7 @@ With Maven:
     <dependency>
       <groupId>clojurewerkz</groupId>
       <artifactId>propertied</artifactId>
-      <version>1.1.0</version>
+      <version>1.2.0</version>
     </dependency>
 
 
