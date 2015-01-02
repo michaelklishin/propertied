@@ -6,7 +6,7 @@ lists.
 
 ## Project Maturity
 
-Propertied is a young project but unlikely to radically change
+Propertied is not a young project and unlikely to radically change
 (it is too small in scope).
 
 
