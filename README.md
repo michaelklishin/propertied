@@ -73,7 +73,7 @@ opposite way.
 ;= {"a key" "a value"}
 
 ;; converting keys to keywords
-(let [pl (p/load-from {"key" "value"})]
+(let [pl (p/load-from {"key" "a value"})]
   (p/properties->map p true))
 ;= {:key "a value"}
 
