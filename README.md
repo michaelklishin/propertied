@@ -28,7 +28,7 @@ using Maven, add the following repository definition to your
 
 With Leiningen:
 
-    [clojurewerkz/propertied "1.2.0"]
+[![Clojars Project](http://clojars.org/clojurewerkz/propertied/latest-version.svg)](http://clojars.org/clojurewerkz/propertied)
 
 
 With Maven:
