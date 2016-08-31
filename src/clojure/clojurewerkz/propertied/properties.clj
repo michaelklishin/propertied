@@ -64,9 +64,9 @@
 
   java.io.File
   (load-from [input]
-    (with-open [is (io/input-stream input)]
+    (with-open [rdr (io/reader input)]
       (doto (Properties.)
-        (.load is))))
+        (.load rdr))))
 
   java.net.URL
   (load-from [input]
