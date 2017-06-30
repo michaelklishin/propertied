@@ -29,22 +29,21 @@
       (.add al (.nextElement e)))
     (into [] al)))
 
-
 ;;
 ;; API
 ;;
 
 (defn properties->map
   ([^Properties p]
-     (properties->map p false))
+   (properties->map p false))
   ([^Properties p keywordize?]
-     (let [names (.propertyNames p)]
-       (reduce (fn [m k]
-                 (assoc m (if keywordize?
-                            (keyword k)
-                            k) (.getProperty p k)))
-               {}
-               (enumerator-into names)))))
+   (let [names (.propertyNames p)]
+     (reduce (fn [m k]
+               (assoc m (if keywordize?
+                          (keyword k)
+                          k) (.getProperty p k)))
+             {}
+             (enumerator-into names)))))
 
 (defn ^Properties map->properties
   [^Map m]
