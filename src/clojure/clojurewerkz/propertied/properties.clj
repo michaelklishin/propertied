@@ -27,7 +27,7 @@
   (let [al (ArrayList.)]
     (while (.hasMoreElements e)
       (.add al (.nextElement e)))
-    (into [] al)))
+    (vec al)))
 
 
 ;;
