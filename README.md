@@ -101,7 +101,7 @@ on Twitter.
 
 ## Supported Clojure Versions
 
-Propertied requires Clojure 1.5.
+Propertied requires Clojure 1.6.
 
 
 ## Continuous Integration Status
