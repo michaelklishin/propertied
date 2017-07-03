@@ -33,12 +33,13 @@ With Leiningen:
 
 With Maven:
 
-    <dependency>
-      <groupId>clojurewerkz</groupId>
-      <artifactId>propertied</artifactId>
-      <version>1.2.0</version>
-    </dependency>
-
+``` xml
+<dependency>
+  <groupId>clojurewerkz</groupId>
+  <artifactId>propertied</artifactId>
+  <version>1.3.0</version>
+</dependency>
+```
 
 
 ## Documentation & Examples
