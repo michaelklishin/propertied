@@ -1,4 +1,4 @@
-(defproject clojurewerkz/propertied "1.3.0-SNAPSHOT"
+(defproject clojurewerkz/propertied "1.3.0"
   :description "Tiny Clojure library for working with property lists (java.util.Properties)"
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [clojurewerkz/support "1.1.0"]]
